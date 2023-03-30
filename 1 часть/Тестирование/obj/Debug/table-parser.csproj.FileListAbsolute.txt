@@ -1,0 +1,13 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\bin\Debug\TableParser.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\bin\Debug\TableParser.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\bin\Debug\TableParser.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\table-parser.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\table-parser.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\TableParser.ParserMainForm.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\TableParser.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\table-parser.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\table-parser.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\table-parser.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\TableParser.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Тестирование\obj\Debug\TableParser.pdb

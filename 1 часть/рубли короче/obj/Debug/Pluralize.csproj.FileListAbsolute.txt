@@ -1,0 +1,9 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\obj\Debug\Pluralize.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\obj\Debug\Pluralize.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\obj\Debug\Pluralize.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\bin\Debug\rubles.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\bin\Debug\Pluralize.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\bin\Debug\Pluralize.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\bin\Debug\Pluralize.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\obj\Debug\Pluralize.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\рубли короче\obj\Debug\Pluralize.pdb

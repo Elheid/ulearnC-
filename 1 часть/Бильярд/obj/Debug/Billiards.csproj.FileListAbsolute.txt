@@ -1,0 +1,10 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\bin\Debug\Billiards.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\bin\Debug\Billiards.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\bin\Debug\Billiards.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\bin\Debug\TestingRoom.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\бильярд\obj\Debug\Billiards.pdb

@@ -1,0 +1,12 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\manipulator.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\manipulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\Manipulation.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\manipulator.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\manipulator.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\bin\Debug\Manipulator.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\bin\Debug\Manipulator.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\bin\Debug\Manipulator.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\manipulator.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\Manipulator.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Практикум\obj\Debug\Manipulator.pdb

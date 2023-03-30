@@ -1,0 +1,16 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\bin\Debug\GravityBalls.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\bin\Debug\GravityBalls.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\bin\Debug\GravityBalls.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\obj\Debug\GravityBalls.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\obj\Debug\GravityBalls.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\obj\Debug\GravityBalls.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\obj\Debug\GravityBalls.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity Balls\obj\Debug\GravityBalls.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\bin\Debug\GravityBalls.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\bin\Debug\GravityBalls.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\bin\Debug\GravityBalls.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\obj\Debug\GravityBalls.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\obj\Debug\GravityBalls.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\obj\Debug\GravityBalls.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\obj\Debug\GravityBalls.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\gravity BallsПоследнее\obj\Debug\GravityBalls.pdb

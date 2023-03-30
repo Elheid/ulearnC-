@@ -1,0 +1,12 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\names.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\Names.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\Names.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\Names.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\ZedGraph.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\bin\Debug\ZedGraph.xml
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Гистаграммы\obj\Debug\Names.pdb

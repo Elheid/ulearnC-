@@ -1,0 +1,15 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\bin\Release\net6.0\Проценты.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\bin\Release\net6.0\Проценты.deps.json
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\bin\Release\net6.0\Проценты.runtimeconfig.json
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\bin\Release\net6.0\Проценты.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\bin\Release\net6.0\Проценты.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.AssemblyInfoInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.AssemblyInfo.cs
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\refint\Проценты.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\Проценты.genruntimeconfig.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Проценты\Проценты\Проценты\obj\Release\net6.0\ref\Проценты.dll

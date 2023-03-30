@@ -1,0 +1,10 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\bin\Debug\Rectangles.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\bin\Debug\Rectangles.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\bin\Debug\Rectangles.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\bin\Debug\TestingRoom.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Ебаные прямоугольники\obj\Debug\Rectangles.pdb

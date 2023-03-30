@@ -1,0 +1,15 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\bin\Debug\HotelAccounting.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\bin\Debug\HotelAccounting.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\bin\Debug\HotelAccounting.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\MainWindow.g.cs
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting_MarkupCompile.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting_MarkupCompile.lref
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\MainWindow.baml
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.g.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Отель\obj\Debug\HotelAccounting.pdb

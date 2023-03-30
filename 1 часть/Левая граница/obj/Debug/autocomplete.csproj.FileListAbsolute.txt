@@ -1,0 +1,16 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\dic\adjectives.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\dic\nouns.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\dic\verbs.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\Autocomplete.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\Autocomplete.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\Autocomplete.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\autocomplete.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\autocomplete.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\Autocomplete.AutocompleteForm.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\Autocomplete.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\autocomplete.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\autocomplete.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\autocomplete.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\Autocomplete.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Левая граница\obj\Debug\Autocomplete.pdb

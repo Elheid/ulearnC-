@@ -1,0 +1,14 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\StructBenchmarking.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\StructBenchmarking.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\StructBenchmarking.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\ZedGraph.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\bin\Release\ZedGraph.xml
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\structure\obj\Release\StructBenchmarking.pdb

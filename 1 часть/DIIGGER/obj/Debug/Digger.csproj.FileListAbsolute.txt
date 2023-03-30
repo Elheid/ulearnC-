@@ -1,0 +1,17 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\Images\Digger.png
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\Images\Gold.png
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\Images\Monster.png
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\Images\Sack.png
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\Images\Terrain.png
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\11-digger.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\11-digger.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\11-digger.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\Digger.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\11-digger.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\DIIGGER\obj\Debug\11-digger.pdb

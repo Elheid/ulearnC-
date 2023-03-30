@@ -1,0 +1,20 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\bin\Debug\Distance.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\bin\Debug\Distance.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\bin\Debug\Distance.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\bin\Debug\TestingRoom.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка\obj\Debug\Distance.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\bin\Debug\Distance.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\bin\Debug\Distance.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\bin\Debug\Distance.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\bin\Debug\TestingRoom.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\От отрезка до ада\obj\Debug\Distance.pdb

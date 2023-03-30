@@ -1,0 +1,14 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\HarryPotterText.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\TextAnalysis.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\TextAnalysis.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\TextAnalysis.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\bin\Debug\nunitlite.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Парсер предложений\obj\Debug\TextAnalysis.pdb

@@ -1,0 +1,16 @@
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\Texts\0.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\Texts\1.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\Texts\2.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\Texts\4.txt
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\PocketGoogle.exe.config
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\PocketGoogle.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\PocketGoogle.pdb
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\bin\Debug\nunit.framework.dll
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.csproj.AssemblyReference.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.Properties.Resources.resources
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.csproj.GenerateResource.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.csproj.CoreCompileInputs.cache
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.csproj.CopyComplete
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.exe
+C:\Users\maxxx\OneDrive\Рабочий стол\Гугл\obj\Debug\PocketGoogle.pdb
