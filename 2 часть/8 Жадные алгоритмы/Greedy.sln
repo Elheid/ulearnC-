@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greedy", "Greedy.csproj", "{DA89A966-D099-4DBD-9F16-540F70A185BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA89A966-D099-4DBD-9F16-540F70A185BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA89A966-D099-4DBD-9F16-540F70A185BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA89A966-D099-4DBD-9F16-540F70A185BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA89A966-D099-4DBD-9F16-540F70A185BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5797345D-9AD7-48DC-9F26-C8E52511ABB7}
+	EndGlobalSection
+EndGlobal
