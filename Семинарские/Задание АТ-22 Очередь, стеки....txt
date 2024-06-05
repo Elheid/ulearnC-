@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
+using System.Security.Claims;
+using System.Xml.Linq;
+
+
+//SQ1
+namespace Seminar
+{
+    public class StackWithMax<T> where T : IComparable<T>
+    {
+        List<T> stack = new List<T>();
+        public List<T> MaxElements = new List<T>();
+        public bool IsEmpty { get { return stack.Count == 0; } }
+
+        public StackWithMax()
+        {
+            stack = new List<T>();
+        }
+
+        public void Push(T value)
+        {
+            if (value.CompareTo(MaxElements[MaxElements.Count - 1]) < 1) MaxElements.Add(value);
+            stack.Add(value);
+
+        }
+
+        public T Pop()
+        {
+            if (stack.Count == 0)
+                throw new Exception("Stack is empty");
+            var removedValue = stack[stack.Count - 1];
+            if (removedValue.CompareTo(MaxElements[MaxElements.Count - 1]) == 0) MaxElements.Remove(removedValue);
+            stack.RemoveAt(stack.Count - 1);
+            return removedValue;
+        }
+
+        public T GetMax()
+        {
+            return MaxElements[stack.Count - 1];
+        }
+    }
+можно заменить max на min или некоторые другие значения удовлетворяющее какому-либо чёткому условию и при этом ответом было бы 1 значение, и чтобы их можно было сохранять в list.
+
+//SQ2
+public class StackToQueue<T>
+    {
+        List<T> list = new List<T>();
+        
+        public bool IsEmpty { get { return list.Count == 0; } }
+        public void Push(T value)
+        {
+            list.Add(value);
+        }
+        public T Pop()
+        {
+            if (list.Count == 0) throw new InvalidOperationException();
+            var result = list[list.Count - 1];
+            list.RemoveAt(list.Count - 1);
+            return result;
+        }
+    }
+
+    public class QueueOnStacks<T>
+    {
+        StackToQueue<T> stackInRightOrder;
+        StackToQueue<T> stackInOppositeOrder;
+
+        public bool IsEmpty { get { return stackInRightOrder.IsEmpty && stackInOppositeOrder.IsEmpty; } }
+        public QueueOnStacks()
+        {
+            stackInRightOrder = new StackToQueue<T>();
+            stackInOppositeOrder = new StackToQueue<T>();
+        }
+
+        public void Enqueue(T value)
+        {
+
+            stackInRightOrder.Push(value);
+        }
+
+        public T Dequeue()
+        {
+            if (stackInOppositeOrder.IsEmpty)
+            {
+                while (!stackInRightOrder.IsEmpty)
+                    stackInOppositeOrder.Push(stackInRightOrder.Pop());
+            }
+            return stackInOppositeOrder.Pop();
+        }
+    }
+}
+
+//SQ5
+Стэк на массиве:
++ на  размерах работает быстрее, но при больших замедляется из-за ниженаписанной проблемы
+- размер стека ограничен, т.к массив не может произвольно менять свой размер, расширение можно реализовать только пересоздав массив и пеоенести все элементы из старого в новый
+- 
+Стэк на списке:
++ максимальный размер стека не ограничен
+- обычно работает не так быстро, как стэк на массиве

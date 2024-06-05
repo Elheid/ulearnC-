@@ -1,0 +1,228 @@
+Многопоточное программирование
+Комаров Максим
+Метелев Никита
+
+M0. Есть несколько читающих потоков, есть несколько пишущих. Работать с данными (читать или писать) одновременно может только один поток. Как обеспечить такой режим доступа?
+
+public static List<int> list = new List<int>();
+
+
+    public static void Writer()
+    {   
+        lock(list)
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                list.Add(i);
+            }
+        }
+
+    }
+
+    public static void Rider()
+    {
+        lock (list)
+        {
+            for (var i = 0; i < list.Count; i++)
+                Console.WriteLine(list[i]);
+        }
+    }
+
+    public static void Main()
+    {
+        var writter1 = new Thread(() => Writer());
+        var writter2 = new Thread(() => Writer());
+
+        var rider1 = new Thread(() => Rider());
+        var rider2 = new Thread(() => Rider());
+
+        writter1.Start();
+        writter2.Start();
+        rider1.Start();
+        rider2.Start();
+    }
+
+M1. Есть несколько читающих потоков, есть несколько пишущих. Одновременно могут читать сколько угодно потоков, но писать — только один. Как обеспечить такой режим доступа?
+
+Приоритет у читающих: Пока есть хоть один читающий, писатели не начинают писать. Писатели могут ждать сколько угодно.
+
+    public static List<int> list = new List<int>();
+    public static int readersCount = 0;
+    public static object listLocker = new object();
+    public static object countLocker = new object();
+    public static Semaphore srm;
+
+    public static void Writer()
+    {
+        lock (listLocker)
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                list.Add(i);
+            }
+        }
+    }
+
+    public static void Reader()
+    {
+        lock (countLocker)
+        {
+            if (readersCount == 0)
+            {
+                srm.WaitOne();
+            }
+            readersCount++;
+        }
+
+        for (var i = 0; i < list.Count; i++)
+            Console.WriteLine(list[i]);
+
+        lock (countLocker)
+        {
+            readersCount--;
+            if (readersCount == 0)
+            {
+                srm.Release();
+            }
+        }
+    }
+
+    public static void Main()
+    {
+        srm = new Semaphore(1, 1);
+
+        var writter1 = new Thread(() => Writer());
+        var writter2 = new Thread(() => Writer());
+
+        var rider1 = new Thread(() => Reader());
+        var rider2 = new Thread(() => Reader());
+
+        writter1.Start();
+        writter2.Start();
+        rider1.Start();
+        rider2.Start();
+    }
+M2*. Продолжение задачи M1. Теперь приоритет у пишущих: Поток хочет начать писать.
+class Programm
+{
+    public static List<int> list = new List<int>();
+    public static int readersCount = 0;
+    public static int writerWaitingCount = 0;
+    public static object listLocker = new object();
+    public static object writersCountLocker = new object();
+    public static object readersCountLocker = new object();
+    public static Semaphore srm;
+
+    public static void Writer()
+    {
+        lock(writersCountLocker)
+        {
+            writerWaitingCount++;
+        }
+
+        lock (listLocker)
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                list.Add(i);
+            }
+        }
+
+        lock (writersCountLocker)
+        {
+            writerWaitingCount--;
+        }
+    }
+
+    public static void Reader()
+    {
+        lock (readersCountLocker)
+        {
+            if (readersCount == 0 || writerWaitingCount != 0)
+            {
+                srm.WaitOne();
+            }
+            readersCount++;
+        }
+
+        for (var i = 0; i < list.Count; i++)
+            Console.WriteLine(list[i]);
+
+        lock (readersCountLocker)
+        {
+            readersCount--;
+            if (readersCount == 0 || writerWaitingCount > 0)
+            {
+                srm.Release();
+            }
+        }
+    }
+
+    public static void Main()
+    {
+        srm = new Semaphore(1, 1);
+
+        var writter1 = new Thread(() => Writer());
+        var writter2 = new Thread(() => Writer());
+
+        var rider1 = new Thread(() => Reader());
+        var rider2 = new Thread(() => Reader());
+
+        writter1.Start();
+        writter2.Start();
+        rider1.Start();
+        rider2.Start();
+    }
+}
+
+M3*. Продолжение предыдущих задач. Теперь приоритет равный. Доступ предоставляется в порядке очереди, кто пришел раньше.
+
+Обычно это не гарантируется, но мы будем предполагать, что если несколько потоков ждут один мьютекс, при разблокировке будет разбужен дольше всего ждущий поток.
+
+class Programm
+{
+    public static List<int> list = new List<int>();
+    public static int readersWaitingCount = 0;
+    public static int writerWaitingCount = 0;
+    public static object listLocker = new object();
+    public static object countLocker = new object();
+    public static Semaphore srm;
+
+    public static void Writer()
+    {
+        srm.WaitOne();
+        Console.WriteLine("Зашёл" + Thread.CurrentThread.ManagedThreadId);
+        for (var i = 0; i < 10; i++)
+        {
+            list.Add(i);
+        }
+        Console.WriteLine("Выходит" + Thread.CurrentThread.ManagedThreadId);
+        srm.Release();
+    }
+
+    public static void Reader()
+    {
+        srm.WaitOne();
+        Console.WriteLine("Зашёл" + Thread.CurrentThread.ManagedThreadId);
+        for (var i = 0; i < list.Count; i++)
+            Console.WriteLine(list[i]);
+        Console.WriteLine("Выходит" + Thread.CurrentThread.ManagedThreadId);
+        srm.Release();
+    }
+
+    public static void Main()
+    {
+        srm = new Semaphore(1, 1);
+
+        var writter1 = new Thread(() => Writer());
+        var writter2 = new Thread(() => Writer());
+
+        var rider1 = new Thread(() => Reader());
+        var rider2 = new Thread(() => Reader());
+
+        writter1.Start();
+        writter2.Start();
+        rider1.Start();
+        rider2.Start();
+    }
+}

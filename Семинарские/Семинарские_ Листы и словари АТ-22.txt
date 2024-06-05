@@ -1,0 +1,119 @@
+Комаров Максим
+LD1. (простая) Есть два множества строк без повторов. Нужно их объединить, исключив повторения.
+
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] firstArray = { 1, 2, 3, 4, 5, 6};
+            int[] secondArray = { 5, 2, 6, 8, 0 };
+
+            foreach (int i in Unite(firstArray, secondArray))
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static IEnumerable<T> Unite<T>(IEnumerable<T> str1, IEnumerable<T> str2)
+        {
+            for (var i = 0; i < str1.Count(); i++)
+                yield return str1.ElementAt(i);
+            for (var i =0; i < str2.Count(); i++)
+            {
+                if (!(str1.Contains(str2.ElementAt(i))))
+                {
+                    yield return str2.ElementAt(i);
+                }
+            }
+        }
+    }
+//ну или так
+static List<T> Unite<T>(IEnumerable<T> str1, IEnumerable<T> str2)
+        {
+            var res = str1.ToList();
+            for (var i =0; i < str2.Count(); i++)
+            {
+                if (!(str1.Contains(str2.ElementAt(i))))
+                {
+                    res.Add(str2.ElementAt(i));
+                }
+            }
+            return res;
+        }
+//или просто linq использовать 
+public static IEnumerable<T> Unite<T>(IEnumerable<T> str1, IEnumerable<T> str2)
+      {
+                return str1.Union(str2);
+      }
+я должен был создать новый объект такого же типа, как мне дали на объединение или я всё усложняю можно просто вернуть list или array?
+
+LD3. Используя уже известные вам структуры данных, разработайте новую структуру данных
+class LRU<T> 
+    void Add(int key, T value) {...}
+    T Get(int key) {...}
+    void RemoveLeastRecentlyUsed() {...} //удаляет дольше всего не использовавшийся ключ
+
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+
+    public static class StackExtensions
+    {
+        public static void PushCheckDubles<T>(this Stack<T> stack, T key)
+        {
+            if (stack.Contains(key))
+            {
+                for (var i = 0; i < stack.Count; i++)
+                {
+                    if (key.Equals(i))
+                        stack.Pop();
+                }
+                stack.Push(key);
+            }
+            else
+                stack.Push(key);
+        }
+    }
+
+    class LRU<T>
+    {
+        private List<int> keysByImportance = new List<int>();
+        private Stack<int> keysOfPriority = new Stack<int>();
+        private Dictionary<int, T> dictionaryOfValues = new Dictionary<int, T>();
+        private int FindValueInPriorityList(int value)
+        {
+            for (var i = 0; i < keysByImportance.Count; i++)
+            {
+                if (value == keysByImportance[i])
+                    return i;
+            }
+            return -1;
+        }
+
+        void Add(int key, T value)
+        {
+            if (dictionaryOfValues.ContainsKey(key))
+            {
+                keysOfPriority.PushCheckDubles(key);
+            }
+            else
+            {
+                keysOfPriority.Push(key);
+                dictionaryOfValues.Add(key, value);
+            }
+        }
+        T Get(int key)
+        {
+            keysOfPriority.PushCheckDubles(key);
+            return dictionaryOfValues[key];
+        }
+        void RemoveLeastRecentlyUsed()
+        {
+            dictionaryOfValues.Remove(keysOfPriority.First());
+            keysByImportance.RemoveAt(keysOfPriority.First());
+        }
+    }
+}

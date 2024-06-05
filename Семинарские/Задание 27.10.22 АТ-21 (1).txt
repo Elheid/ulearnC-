@@ -1,0 +1,88 @@
+Задание 27.10.2022
+Подготовили
+Метелев Никита
+Комаров Максим
+
+Задание 1
+С помошью рекурсии
+using System.Text;
+
+namespace Something
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(RaiseNumberToDegree(2, 4));
+        }
+        static int RaiseNumberToDegree(int numberToRise, int degree)
+        {
+            if (degree == 0)
+                return 1;
+            if (degree % 2 == 1)
+                return RaiseNumberToDegree(numberToRise, degree - 1) * numberToRise;
+            else
+            {
+                var number = RaiseNumberToDegree(numberToRise, degree / 2);
+                return number * number;
+            }
+        }
+    }
+}
+Без помощи рекурсии
+
+using System.Text;
+
+namespace Something
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            RaiseNumberToDegree(2, 4);
+        }
+        static void RaiseNumberToDegree(int numberToRise, int degree)
+        {
+            var result = 1;
+            while (degree != 0)
+            {
+                if (degree % 2 == 0)
+                {
+                    degree = degree / 2;
+                    numberToRise *= numberToRise;
+                }
+                else
+                {
+                    degree -= 1;
+                    result *= numberToRise;
+                }
+            }
+            Console.WriteLine(result);
+        }
+    }
+}
+
+Задача 2
+using System.Text;
+
+namespace Something
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SearchInFibonacciRaw(4));
+        }
+        static int SearchInFibonacciRaw(int positiaOfNumber)
+        {
+            if ( positiaOfNumber == 0 || positiaOfNumber== 1 || positiaOfNumber == 2)
+            {
+                return positiaOfNumber;
+            }
+            else
+            {
+                return SearchInFibonacciRaw(positiaOfNumber - 1) + SearchInFibonacciRaw(positiaOfNumber - 2);
+            }
+        }
+    }
+}

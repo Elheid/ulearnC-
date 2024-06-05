@@ -1,0 +1,54 @@
+Комаров Максим 
+Метелев Никита
+Задание 1 :Написать метод, который принимает ленивую коллекцию IEnumerable и генерирует из неё ленивую коллекцию.
+Проверять автоматически, что коллекции действительно ленивые: т.е. элементы генерируются только те, которые запрошены.
+
+using System;
+using System.Threading.Tasks;
+using System.Timers;
+
+namespace Tests
+{
+    class Program
+    {
+        public static IEnumerable<int> GenerateCycleCollection(int maxValue)
+        {
+            for (var value = 0; value <= maxValue; value++)
+            {
+                yield return value %= maxValue;
+            }
+        }
+
+        static IEnumerable<int> Collection(IEnumerable<int> lazyCollection)
+        {
+            foreach(var currentNumber in lazyCollection)
+            {
+                yield return currentNumber + 2;
+            }
+        }
+
+        public static void Main()
+        {
+            var collection1 = Collection(GenerateCycleCollection(2));
+            var collection2 = GenerateCycleCollection(2);
+            var cycle2 = collection1.GetEnumerator().Current;
+            var cycle3 = collection2.GetEnumerator().Current;
+            Console.WriteLine(cycle2);
+            Console.WriteLine(cycle3);
+
+            foreach (var cycle in collection1)
+            {
+                cycle2 = collection1.GetEnumerator().Current;
+                cycle3 = collection2.GetEnumerator().Current;
+                Console.WriteLine(cycle2);
+                Console.WriteLine(cycle3);
+                Thread.Sleep(500);
+                Console.WriteLine(cycle);
+            }
+        }
+    }
+}
+Задание 2 : Переберите все арифметические формулы размера L, использующие константы 0, 1, 2, переменную x, бинарные операции -, +, *, и скобки. Размер выражения — это количество использованных бинарных операций. Пример формул размера 1: 0+1, x*2, размера 4: x*x+2*x+1, (1+x)*1*2+0.
+
+Как можно не перечислять выражения, эквивалентные уже перечисленным ранее? Например, если перечислено выражение 2+x*1, то не нужно перечислять выражения x*1+2, 1*x+2 и x+2+0.
+Задание 3 :Создайте последовательность из N int-ов, добавление которой в словарь занимает в несколько раз больше времени, чем добавление такого же количества последовательных чисел.

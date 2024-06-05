@@ -1,0 +1,59 @@
+public class StackItem
+{
+    public string Value { get; set; }
+    public StackItem Next { get; set; }
+    public StackItem Previous { get; set; }
+}
+
+public class StackOfProgramms
+{
+    public StackItem Head { get { return head; } }
+    public StackItem Tail { get { return tail; } }
+    private StackItem head;
+    private StackItem tail;
+
+    int count;
+    public int Count { get { return count; } }
+
+    public bool IsEmpty { get { return Head == null || Tail == null; } }
+
+    public StackOfProgramms CloneStack(StackOfProgramms oldStack)
+    {
+        tail = oldStack.Tail;
+        head = oldStack.Head;
+        count = oldStack.count;
+        return this;
+    }
+
+    public void Push(string programmToPush)
+    {
+        if (IsEmpty)
+        {
+            head = new StackItem { Value = programmToPush, Next = null, Previous = null };
+            tail = Head;
+        }
+        else if (count == 1)
+        {
+            var programm = new StackItem { Value = programmToPush, Next = null, Previous = Head };
+            Tail.Next = programm;
+            tail = programm;
+        }
+        else
+        {
+            var programm = new StackItem { Value = programmToPush, Next = null, Previous = Tail };
+            Tail.Next = programm;
+            tail = programm;
+        }
+        count++;
+    }
+
+    public string Pop()
+    {
+        if (IsEmpty)
+            throw new InvalidOperationException();
+        var removedProgramm = Tail.Value;
+        tail = Tail.Previous;
+        count--;
+        return removedProgramm;
+    }
+}

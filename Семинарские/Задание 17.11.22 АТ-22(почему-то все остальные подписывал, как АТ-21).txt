@@ -1,0 +1,253 @@
+Задание 17.11.22 АТ-22
+(почему-то все остальные подписывал, как АТ-21, а не АТ-22, надеюсь вы поставили всё верно, несмотря на эту опечатку, т.к кто выполнял я всегда верно подписывал)
+Подготовили Комаров Максим Метелев Никита
+Игра Дурак
+using System.Text;
+using static CardGame.Mark;
+
+namespace CardGame
+{
+    class Card
+    {
+        public enum ScoreOfCard
+        {
+            two = 2,
+            three,
+            four,
+            five,
+            six,
+            seven,
+            eight,
+            nine,
+            ten,
+            jack,//валет
+            queen,
+            king,
+            ace,
+            //joker
+
+        }
+        public Mark Mark;
+        public ScoreOfCard Score;
+    }
+    class Mark
+    {
+        public Mark(TypeOfMark type)
+        {
+            typeOfMark = type;
+        }
+        public enum TypeOfMark
+        {
+            hearts,
+            diamonds,
+            spades,
+            clubs,
+        }
+        public TypeOfMark typeOfMark;
+    }
+    class Player
+    {
+
+    }
+    class Move
+    {
+        public ResultOfTurn ResultOfTurn;
+        public Card[] CardsHasPlayer;
+        public Card[] TakeCards()
+        { 
+            return new Card[0];
+        }
+        public Card BeatCardWitchThis()
+        { 
+            return new Card();
+        }
+    }
+    static class Rules
+    {
+        public bool CheckAllRulesFollowed()
+        {
+
+        }
+        public bool CheckMovePossibility()
+        {
+            //корректный или некорректный ход
+        }
+        public Player GetCurrentPlayer()
+        { //что делает конкретный игрок, его ли ход
+            return new Player();
+        }
+        //singleTon
+    }
+    class Table
+    {
+        public Move CurrentMove;
+        public CardDeck CardDeck;
+        public Trash Trash;
+    }
+    class Trash
+    {
+        private Card[] BeatenCards;
+        //сюда все битые карты их нельзя видеть/трогать
+        public Card[] MoveToTrash()
+        {
+            return new Card[0];
+        }
+    }
+    class CardDeck
+    {
+        public Card[] CardsInDeck;
+        public Mark TrumpMark;
+    }
+    public class ResultOfTurn
+    {
+        public bool CheckCardsHierarchy()
+        {
+            var card = new Card();
+            var cardScore = card.Score;
+            //выше карта или ниже по иерархии
+        }
+        public Mark MarkOfCards()
+        {
+            //проверка масти используемой карты, 
+            // козырь или нет одна масть у карты, на столе и игрока, чтобы он мог побить её
+        }
+        public static Move CheckMove()
+        {
+            //может ли игрок сходить так как сходил
+            return new Move();
+        }
+    }
+}
+Морской бой
+
+using System.Drawing;
+
+namespace SeaFight
+{
+    class Ship
+    {
+        public enum NameOfShip
+        {
+            Carrier,
+            Battleship,
+            Destroyer,
+	        Submarine,
+            PatrolBoat,
+        }
+        public NameOfShip nameOfShip;
+        public Ship(NameOfShip name)
+        {
+            nameOfShip = name;
+        }
+        public Size SizeOfShip;
+        public ShipIntegrity ShipIntegrity;
+        public Coordinates ShipCoordinates;
+    }
+    class ShipIntegrity
+    {
+        public ShipIntegrity ChangeIntegrity()
+        {
+            return new ShipIntegrity();//когда попал
+        }
+        public ShipIntegrity CheckIntegrity()
+        {
+            ///
+        }
+        public int CountOfDamagedDecks;
+        public int CountOfUnInjuredDecks;
+    }
+    class Size
+    {
+        public Size(ValuableSize size)
+        {
+            valuableSize = size;
+        }
+        public ValuableSize valuableSize;
+
+        public enum ValuableSize
+        {
+            twoDeckShip = 2,
+            threeDeckShip = 3,
+            fourDeckShip = 4,
+            fiveDeckShip = 5,
+        }
+    }
+    class Coordinates
+    {
+        public Coordinates Number; //XCoor;
+        public Coordinates Letter; //YCoor;
+    }
+    class GameMapOfUserShips
+    {
+        public Paint PaintDeadShips()
+        { }
+        public Paint PaintAliveShips()
+        { }
+        public Paint PaintDamagedShips()
+        { }
+        public Ship[] Ships;
+        public Coordinates[,] MapCooedinates;
+        public Coordinates ShipCoordinates;
+    }
+    class GameMapOfOpponent
+    {
+        public Paint PaintDeadShips()
+        { }
+        public Paint PaintDamagedShips()
+        { }
+        public Ship[] Ships;
+        public Coordinates[,] MapCooedinates;
+        public Coordinates ShipCoordinates;
+    }
+    class Player
+    {
+        public string Name;
+        public Move CurrentMove;
+        public int Statistick;
+        public void CheckStatistick()
+        { }//сколько еораблей сбито, сколько живо и т.д
+    }
+    class Move
+    {
+        public Move TakeAShoot()
+        { 
+        }
+        public CheckTheHit()
+        {
+
+        }
+    }
+    class Rules
+    {
+        public bool CheckAllRulesFollowed()
+        { }
+    }
+    class Paint
+    {
+        public Pen Pen;
+        public Paint PaintShips()
+        { }
+        public Paint MarkOfHit()
+        { }
+        public Paint PaintMap()//которая состоит из ячеек
+        { }
+    }
+    class Pen
+    {
+        public enum Colours
+        {
+            Red,
+            Black,
+            Gray,
+        }
+        public Colours colours;
+        public Pen(Colours colour)
+        {
+            colours = colour;
+        }
+        public int Size;
+        public Coordinates CooedinatesOfPen;
+    }
+}
+
+В процессе...

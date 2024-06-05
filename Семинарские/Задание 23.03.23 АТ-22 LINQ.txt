@@ -1,0 +1,99 @@
+Тема LINQ
+Комаров Максим 
+Метелев Никита
+
+namespace Seminar
+{
+    public class Programm
+    {
+        static class Program
+        {
+            static void Main(string[] args)
+            {
+				//LQ1. Используя Linq, циклически сдвинуть массив на K влево. Без циклов. Без Reverse.
+                int[] array = { 1, 2, 3};
+                var shift = 2;
+                var res = array.Skip(array.Length - shift).Union(array.SkipLast(shift));
+
+				//LQ2. Дан S — набор целочисленных точек на плоскости. Нужно получить 1-окрестность этих точек. 
+				То есть все точки (по одному разу), являющиеся соседними хотя бы с одной из точек S.
+				Для набора [(0, 0)] в ответе 8 точек. Для набора [(0, 0), (0, 1)] в ответе 12 точек.
+
+                var s = new Point[] { new Point { X = 0, Y = 0 }, new Point { X =0, Y = 1} };
+                var res = s.SelectMany(point => new Point[]
+                {
+                    new Point { X = point.X, Y = point.Y +1 },
+                    new Point { X = point.X, Y = point.Y-1 },
+                    new Point { X =point.X +1, Y = point.Y },
+                    new Point { X = point.X-1, Y = point.Y },
+                    new Point { X = point.X +1, Y = point.Y + 1 },
+                    new Point { X = point.X +1, Y = point.Y -1 },
+                    new Point { X = point.X -1, Y = point.Y+1 },
+                    new Point { X = point.X -1, Y = point.Y-1 }
+                }).Distinct();
+                var c = res.Count();
+				// 2 вариант
+                var result = s.SelectMany(point => 
+                {
+                    var areaPoints = new List<Point>();
+                    for (var i=-1;i<=1;i++)
+                    {
+                        for (var j = -1; j <= 1; j++)
+                        {
+                            var newPoint = new Point { X = point.X + i, Y = point.Y + j };
+                            areaPoints.Add(newPoint);
+                        }
+                    }
+                    return areaPoints.ToArray();
+                }).Distinct();
+                var c2 = result.Count();
+
+				//LQ3. Дан набор строк. Найти все строки, в которых ни одна буква не повторяется больше 2 раз.
+
+                string[] words = new string[] { "three", "four", "five", "seven" };
+
+                Func<string, string?> searchRepeated = word =>
+                {
+                    var repeatedChar = word.GroupBy(x => x)
+                                 .Where(g => g.Count() > 1)
+                                 .Select(y => y.Key)
+                                 .ToList();
+                    if (repeatedChar.Count != 0)
+                        return null;
+                    return word;
+                };
+				// можно по другому
+
+                Func<string, string?> searchRepeated = word =>
+                {
+                    var repeatedChar = word.All(x => 
+                    {
+                        var count = 0;
+                        foreach (var sym in word)
+                        {
+                            if (x == sym)
+                                count++;
+                        }
+                        if (count >= 2)
+                            return false;
+                        return true;
+                        });
+                    if (repeatedChar)
+                        return word;
+                    return null;
+                };
+
+                var result = words
+                    .Select(searchRepeated)
+                    .Where(x => !string.IsNullOrEmpty(x));
+                foreach(var word in result)
+                   Console.WriteLine(word);
+				// 3 вариант решения
+
+			var str = new string[] { "ааббвв", "абвгд","1212", "абвг" ,"AAAAAAAAAAAA" };
+        	var carrentString = str
+            		.Select(x => x.Where(noRepeat => x.Length == x.Distinct().Count()).ToArray());
+            }
+        }
+    }
+}

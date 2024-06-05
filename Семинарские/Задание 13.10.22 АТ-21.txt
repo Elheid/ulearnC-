@@ -1,0 +1,100 @@
+Подготовили 
+Комаров Максим
+Метелев Никита
+//Arr 1
+namespace Something
+{
+    class Program
+    {
+        static int L = 1;
+        static int R = 5;
+        static int endIndexForPairs = 0;
+        static int amountNumberBeetwen = R - L + 1;
+        static int amountOfPairs = (R - L + 1) / 2;
+        static int[] array = new int[] { 1, 3, 4, 5, 6, 7, -4 };
+        static int result = 0;
+        static void Main(string[] args)
+        {
+            var evenPairs = new List<int>();
+            var oddPairs = new List<int>();
+
+            CreateSumOfPairs(evenPairs, oddPairs);
+            if (amountNumberBeetwen % 2 == 0)
+            {
+                SearchSumFromLToR(evenPairs,oddPairs,amountNumberBeetwen);
+            }
+            else
+            {
+                SearchSumFromLToR(oddPairs, evenPairs, amountNumberBeetwen);
+            }
+           Console.WriteLine(result);
+        }
+        static void CreateSumOfPairs(List<int> evenPairs, List<int> oddPairs)
+        {
+            for (var i = 0; i < (array.Length - 2); i = i + 2)
+            {
+                evenPairs.Add(array[i] + array[i + 1]);
+                oddPairs.Add(array[i + 1] + array[i + 2]);
+            }
+        }
+
+        static void SearchSumFromLToR(List<int> firstPairs, List<int> secondPairs,int numbersBeetwen)
+         {
+            endIndexForPairs = GetEndIndexForPairs(R);
+            SumOfPairs(L, firstPairs, secondPairs);
+            if (numbersBeetwen % 2 != 0)
+            result += array[L];
+         }
+
+        static int GetEndIndexForPairs(int R)
+        {
+            var endIndexForPairs = 0;
+            if (R % 2 == 0)
+                return endIndexForPairs = R / 2;
+            else
+                return endIndexForPairs = (R + 1) / 2;
+        }
+
+        static int SumOfPairs(int L, List<int> PairsFirst, List<int> PairsSecond)
+        {
+            
+            for (var i = (amountOfPairs); i > 0; i--)
+            {
+                if (L % 2 == 0)
+                    result += PairsFirst[endIndexForPairs - 1];
+                else
+                    result += PairsSecond[endIndexForPairs - 1];
+                endIndexForPairs--;
+            }
+            return result;
+        }
+    }
+}
+
+//Arr4
+namespace Something
+{
+    class Program
+    {
+        static int[] arrayBasic = new[] { 6, 1, 3, 5, 4, 2 };
+        static int[] arrayOwnedIn = new[] {1, 5, 4};
+        static bool arrayIncudedOther = true;
+        static bool arrayNotIncudedOther = false;
+        static int numberNotFoundInArray = -1;
+        static int indexOfNumberInArray = 0;
+        static void Main(string[] args)
+        {
+            Console.WriteLine(DoesFirstArrayIncludeSrcond(arrayOwnedIn, arrayBasic));
+        }
+        static bool DoesFirstArrayIncludeSrcond(int[] arrayBasic, int[] arrayOwnedIn)
+        {
+            for (var i=0; i < arrayBasic.Length;i++)
+            {
+                indexOfNumberInArray = Array.IndexOf(arrayOwnedIn, arrayBasic[i], indexOfNumberInArray);
+                if (indexOfNumberInArray == numberNotFoundInArray)
+                    return arrayNotIncudedOther; 
+            }
+            return arrayIncudedOther;
+        }
+    }
+}

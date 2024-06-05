@@ -1,0 +1,47 @@
+Комаров Максим
+ search1
+
+var array = new int[] { 2, 6, 1, 8, 10 };
+    HoareSort(array, 0 , array.Length-1);
+Console.WriteLine(FindIndex(array,10));
+
+static void HoareSort(int[] array, int leftBoard, int rightBoard)
+{
+    if (rightBoard == leftBoard) return;
+    var pivot = array[rightBoard];
+    var storeIndex = leftBoard;
+    for (int i = leftBoard; i <= rightBoard - 1; i++)
+        if (array[i] <= pivot)
+        {
+            var t = array[i];
+            array[i] = array[storeIndex];
+            array[storeIndex] = t;
+            storeIndex++;
+        }
+
+    var number = array[storeIndex];
+    array[storeIndex] = array[rightBoard];
+    array[rightBoard] = number;
+    if (storeIndex > leftBoard) HoareSort(array, leftBoard, storeIndex - 1);
+    if (storeIndex < rightBoard) HoareSort(array, storeIndex + 1, rightBoard);
+}
+
+static int FindIndex(int[] array, int element)
+{
+    var left = 0;
+    var right = array.Length - 1;
+    while (left < right)
+    {
+        var middle = (right + left) / 2;
+        if (element <= array[middle])
+            right = middle;
+        else left = middle + 1;
+    }
+    if (array[right] == element)
+        return right;
+    return -1;
+}
+
+search0
+середина вычисляется так, чтобы не было ошибки:
+var middle = left + (right - left) / 2;

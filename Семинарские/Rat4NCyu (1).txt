@@ -1,0 +1,52 @@
+Код подготовили Комаров Максим и Метелев Никита АТ-22
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
+using System.Globalization;
+
+
+const int x = 3, x0 = 1, y = 3, y0 = 1;
+var deltaX = Math.Abs(x - x0);
+var deltaY = Math.Abs(y - y0);
+Console.WriteLine(OutputOfRespone(MoveQueen(deltaX, deltaY)));
+
+static string OutputOfRespone(bool correctnessOfMove)
+{
+    if (correctnessOfMove)
+        return "Фигура так ходить может";
+    return "Фигура не может так ходить";
+}
+
+static bool MoveElephant(int deltaX, int deltaY)
+{
+    return (DiagonalMove(deltaX, deltaY));
+}
+
+static bool MoveRook(int deltaX, int deltaY)
+{
+    return (MoveOnlyAxis(deltaX, deltaY));
+}
+
+static bool MoveQueen(int deltaX, int deltaY)
+{
+    return (MoveOnlyAxis(deltaX, deltaY) || DiagonalMove(deltaX, deltaY));
+}
+
+static bool MoveKing(int deltaX, int deltaY)
+{
+    return (IntroduceConditionKingMove(deltaX, deltaY));
+}
+
+static bool MoveOnlyAxis(int deltaX, int deltaY)
+{
+    return (deltaX == 0 || deltaY == 0);
+}
+
+static bool DiagonalMove(int deltaX, int deltaY)
+{
+    return (deltaX == deltaY);
+}
+
+static bool IntroduceConditionKingMove(int deltaX, int deltaY)
+{
+    return ((deltaX == 0 && deltaY == 1) || (deltaY == 0 && deltaX == 1) || (deltaX == 1 && deltaY == 1));
+}

@@ -1,0 +1,134 @@
+Подготовили:
+Комаров Максим
+Метелев Никита
+
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace Seminar
+{
+    class Number
+    {
+        public static int numberToFind;
+        public static string FindIndexByBinarySearch(int[] array)
+        {
+            var left = 0;
+            var right = array.Length - 1;
+            while (left < right)
+            {
+                var middle = (right + left) / 2;
+                if (numberToFind <= array[middle])
+                    right = middle;
+                else left = middle + 1;
+            }
+            if (array[right] == numberToFind)
+                return "Элемент " + numberToFind + " содержится в массиве где-то в диапазоне";
+            return "Элемент " + numberToFind + " НЕ содержится в массиве где-то в диапазоне";
+        }
+    }
+    public static class ArrayExtensions
+    {
+        public static int REnd;
+        public static int LStart;
+        public static int[] temporaryArray;
+
+        static void HoareSort(this Array array, int start, int end)
+        {
+            if (end == start) return;
+            var pivot = end;
+            var storeIndex = start;
+
+            for (int i = start; i <= end - 1; i++)
+            {
+                var element = (IComparable)array.GetValue(i);
+                var nextElement = array.GetValue(storeIndex);
+                if (element.CompareTo(pivot) <= 0)
+                {
+                    var temp = element;
+                    array.SetValue(nextElement, i);
+                    array.SetValue(temp, storeIndex);
+                    storeIndex++;
+                }
+            }
+            var arrayStore = array.GetValue(storeIndex);
+            var arrayEnd = array.GetValue(end);
+            var n = arrayStore;
+            array.SetValue(arrayEnd, storeIndex);
+            array.SetValue(n, end);
+            if (storeIndex > start) HoareSort(array, start, storeIndex - 1);
+            if (storeIndex < end) HoareSort(array, storeIndex + 1, end);
+        }
+
+        public static void HoareSort(this Array array)
+        {
+            HoareSort(array, 0, array.Length - 1);
+        }
+
+        public static void Merge(this int[] array, int start, int middle, int end)
+        {
+            var leftPtr = start;
+            var rightPtr = middle + 1;
+            var length = end - start + 1;
+            for (int i = 0; i < length; i++)
+            {
+                if (rightPtr > end || (leftPtr <= middle && array[leftPtr] < array[rightPtr]))
+                {
+                    temporaryArray[i] = array[leftPtr];
+                    leftPtr++;
+                }
+                else
+                {
+                    temporaryArray[i] = array[rightPtr];
+                    rightPtr++;
+                }
+            }
+            for (int i = 0; i < length; i++)
+                array[i + start] = temporaryArray[i];
+        }
+
+
+        public static void MergeSort(this int[] array, int start, int end)
+        {
+            if (start == end) return;
+            var middle = (start + end) / 2;
+            MergeSort(array, start, middle);
+            MergeSort(array, middle + 1, end);
+            Merge(array, start, middle, end);
+
+        }
+
+       public  static void MergeSort(this int[] array)
+        {
+            temporaryArray = new int[array.Length];
+            MergeSort(array, 0, array.Length - 1);
+        }
+        public static void AddInArray(this int[] arrayToSort, int[] array)
+        {
+            for (var i = 0; LStart <= REnd; LStart++, i++)
+            {
+                var elementOfSortArr = arrayToSort.GetValue(i);
+                var elementOfArr = array.GetValue(LStart);
+                elementOfSortArr = elementOfArr;
+                arrayToSort.SetValue(elementOfArr, i);
+            }
+        }
+    }
+
+    class Programm
+    {
+         public static void Main()
+         {
+             Number.numberToFind = 2;
+             ArrayExtensions.REnd = 4;
+             ArrayExtensions.LStart = 1;
+             var array = new int[] { 1, 2, 4, 1, 2, 5, 1, 3, 4, 6, 1, 6, 1, 3, 4, 6, 1 };
+             
+             var length = ArrayExtensions.REnd - ArrayExtensions.LStart + 1;
+             var arrayToSearch = new int[length];
+             arrayToSearch.AddInArray(array);
+            arrayToSearch.MergeSort();
+            //arrayToSearch.HoareSort(); не во всех случаях укладывается в o(n^2)
+            Console.WriteLine(Number.FindIndexByBinarySearch(arrayToSearch));
+         }
+    }
+}

@@ -1,0 +1,130 @@
+ 1709 Пингвин-Авиа.
+class Programm
+{
+    public static Point newPath;
+    public static string[,] CreateEmptyMatrix(int length)
+    {
+        var result = new string[length, length];
+        for (var x = 0; x < length; x++)
+            for (var y = 0; y < length; y++)
+            {
+                result[x, y] = "0";
+            }
+        return result;
+    }
+
+    public static void ReturnAnswer(string[,] matrix, List<List<Point>> connectedCoomponents, double refuseCost, double createCost)
+    {
+        var length = matrix.GetLength(0);
+        var refuseAirPath = refuseCost * connectedCoomponents.Count / 2;
+        var createdPaths = createCost * connectedCoomponents.Count / 4;
+        Console.WriteLine(refuseAirPath + createdPaths);
+        for (var x = 0; x < length; x++)
+        {
+            Console.WriteLine();
+            for (var y = 0; y < length; y++)
+            {
+                Console.Write(matrix[x, y]);
+            }
+        }
+    }
+
+    public static string[,] ReturnAirPath(List<List<Point>> connectedCoomponents, int[,] map)
+    {
+        var matrix = CreateEmptyMatrix(map.GetLength(0));
+        foreach (var components in connectedCoomponents)
+        {
+            var firstComponents = components.First();
+
+            matrix[firstComponents.X, firstComponents.Y] = "d";
+
+        }
+        matrix[newPath.X, newPath.Y] = "a";
+        matrix[newPath.Y, newPath.X] = "a";
+        return matrix;
+    }
+
+    public static List<List<Point>> FindConnectedComponents(int[,] map)
+    {
+        var result = new List<List<Point>>();
+        var markedNodes = new List<Point>();
+        var nodes = SearchPossibleNodes(map);
+        while (result.Count <= nodes.Count)
+        {
+            var nextNode = nodes.Where(node => !markedNodes.Contains(node)).FirstOrDefault();
+            var breadthSearch = BreadthSearch(map, nextNode);
+            result.Add(breadthSearch.ToList());
+            foreach (var node in breadthSearch)
+                markedNodes.Add(node);
+        }
+        return result;
+    }
+
+    public static List<Point> BreadthSearch(int[,] map, Point startAirPort)
+    {
+        var queue = new Queue<Point>();
+        var mapLength = map.GetLength(0);
+
+        var visitedAirports = new List<Point>();
+        queue.Enqueue(startAirPort);
+        while (queue.Count != 0)
+        {
+            var airportLoc = queue.Dequeue();
+
+            if (airportLoc.X < 0 || airportLoc.X >= map.GetLength(0) || airportLoc.Y < 0 || airportLoc.Y >= map.GetLength(1)) continue;
+            if (map[airportLoc.X, airportLoc.Y] == 0) continue;
+            visitedAirports.Add(airportLoc);
+
+
+            for (var dy = -1; dy <= 1; dy++)
+                for (var dx = -1; dx <= 1; dx++)
+                {
+                    if (airportLoc.X + dx < 0 || airportLoc.Y + dy < 0) continue;
+                    if (airportLoc.X + dx >= mapLength || airportLoc.Y + dy >= mapLength) continue;
+                    if (dx != 0 && dy != 0) continue;
+                    if (map[airportLoc.X + dx, airportLoc.Y + dy] == 0) continue;
+                    else
+                    {
+                        var newPoint = new Point(airportLoc.X + dx, airportLoc.Y + dy);
+                        if (!visitedAirports.Contains(newPoint))
+                            queue.Enqueue(newPoint);
+                    }
+                }
+        }
+        return visitedAirports;
+    }
+
+    public static List<Point> SearchPossibleNodes(int[,] map)
+    {
+        var result = new List<Point>();
+        var length = map.GetLength(0);
+        for (var x= 0; x < length; x++)
+            for (var y = 0; y < length; y++)
+            {
+                if (map[y, x] == 0)
+                {
+                    if (x!=y)
+                        newPath = new Point(x, y);
+                    continue;
+                }
+                result.Add(new Point(x, y));
+            }
+        return result;
+    }
+
+    public static void Main()
+    {
+        var map = new int[,] { 
+            { 0, 1, 1, 0, 0, 0},
+            { 1, 0, 1, 0, 0, 0},
+            { 1, 1, 0, 0, 0, 0},
+            { 0, 0, 0, 0, 1, 1},
+            { 0, 0, 0, 1, 0, 1},
+            { 0, 0, 0, 1, 1, 0}
+        };// можно другую матрицу
+        var startAirPort = new Point(0, 1);
+        var components = FindConnectedComponents(map).Where(x => x.Count !=0).ToList();
+        var matrix = ReturnAirPath(components, map);
+        ReturnAnswer(matrix, components, 2, 3);
+    }
+}

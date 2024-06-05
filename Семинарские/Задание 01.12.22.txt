@@ -1,0 +1,460 @@
+Работали:
+Комаров Максим
+Метелев Никита
+Смолина Екатерина
+
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
+using System.Security.Claims;
+using System.Xml.Linq;
+//Дробь  исправляли: Смолина Екатерина, Комаров Максим
+namespace Seminar
+{
+    public class Fraction
+    {
+        private int numenator;
+        private int denominator;
+        public int Numenator { get { return numenator; } set { numenator = value; } }
+        public int Denominator
+        {
+            get { return denominator; }
+            set
+            {
+                if (value == 0) throw new ArgumentException();
+                denominator = value;
+            }
+        }
+
+        int Result { get { return (int)((double)Numenator / (double)Denominator); } }
+        public Fraction(int numenator, int denominator)
+        {
+
+            Numenator = numenator;
+            Denominator = denominator;
+        }
+
+        public Fraction Minimaze()
+        {
+            var numinator = Math.Abs(Numenator);
+            var denominator = Math.Abs(Denominator);
+
+            var minValue = Math.Min(numinator, denominator);
+
+            for (var i = 1; i < minValue; i++)
+            {
+                if (Numenator != 0 && Numenator != 1 && Denominator != 0 && Numenator % i == 0 && Denominator % i == 0)
+                {
+                    Numenator /= i;
+                    Denominator /= i;
+                }
+            }
+
+            if (Numenator < 0 && Denominator < 0)
+                return new Fraction(Math.Abs(Numenator), Math.Abs(Denominator));
+            return new Fraction(Numenator, Denominator);
+        }
+
+        public Fraction SummFraction(Fraction anotherFraction)
+        {
+            if (Denominator == anotherFraction.Denominator)
+            {
+                return new Fraction(Numenator + anotherFraction.Numenator, Denominator);
+            }
+            else
+            {
+                var fraction = LeadToOneDenuminator(this, anotherFraction);
+                this.Numenator = fraction[0];
+                anotherFraction.Numenator = fraction[1];
+                this.Denominator = fraction[2];
+                anotherFraction.Denominator = fraction[2];
+                return new Fraction(this.Numenator + anotherFraction.Numenator, Denominator);
+            }
+        }
+
+        public Fraction Substraction(Fraction anotherFraction)
+        {
+            var fraction = LeadToOneDenuminator(this.Minimaze(), anotherFraction.Minimaze());
+            this.Numenator = fraction[0];
+            anotherFraction.Numenator = fraction[1];
+            this.Denominator = fraction[2];
+            anotherFraction.Denominator = fraction[2];
+            return new Fraction(this.Numenator - anotherFraction.Numenator, this.Denominator);
+        }
+
+        public Fraction Multiply(Fraction anotherFraction)
+        {
+            Numenator *= anotherFraction.Numenator;
+            Denominator *= anotherFraction.Denominator;
+            return new Fraction(Numenator, Denominator);
+        }
+
+        public Fraction Divide(Fraction anotherFraction)
+        {
+            var floppedfraction = FlipTheFraction(anotherFraction);
+            return Multiply(floppedfraction);
+        }
+
+        public string Compare(Fraction anotherFraction)
+        {
+            if (Denominator != anotherFraction.Denominator)
+            {
+                var fraction = LeadToOneDenuminator(this.Minimaze(), anotherFraction.Minimaze());
+                this.Numenator = fraction[0];
+                anotherFraction.Numenator = fraction[1];
+                this.Denominator = fraction[2];
+                anotherFraction.Denominator = fraction[2];
+            }
+            if (Numenator == anotherFraction.Numenator)
+                return "Дроби равны";
+            else if (Numenator < anotherFraction.Numenator)
+                return "Первая дробь меньше второй дроби";
+            return "Первая дробь больше второй дроби";
+        }
+
+        public static void BringResultFraction(Fraction fraction)
+        {
+            fraction.Minimaze();
+            if (fraction.Numenator == 0)
+                Console.WriteLine("Дробь " + fraction.Numenator);
+            else
+            {
+                Console.WriteLine("Числитель  " + fraction.Numenator);
+                Console.WriteLine("Знаменатель  " + fraction.Denominator);
+            }
+            Console.WriteLine();
+        }
+
+        public int[] LeadToOneDenuminator(Fraction firstFraction, Fraction secondFraction)
+        {
+            firstFraction.Numenator *= secondFraction.Denominator;
+            secondFraction.Numenator *= firstFraction.Denominator;
+
+            firstFraction.Denominator *= secondFraction.Denominator;
+            return new int[] { firstFraction.Numenator, secondFraction.Numenator, firstFraction.Denominator };
+        }
+
+        public Fraction FlipTheFraction(Fraction fraction)
+        {
+            var newNuminator = fraction.Denominator;
+            var newDenominator = fraction.Numenator;
+
+            return new Fraction(newNuminator, newDenominator);
+        }
+
+    }
+
+    public class Programm
+    {
+        public static void Main(string[] arges)
+        {
+            var fraction = new Fraction(-2, 16);
+            var fraction2 = new Fraction(-2, 4);
+
+            //var sumFracture = fraction.SummFraction(fraction2);
+            //var substractFraction = fraction.Substraction(fraction2);
+            //var minimaze = fraction.Minimaze(fraction);
+            var multiplay = fraction.Multiply(fraction2);
+            //var divine = fraction.Divide(fraction2);
+            //var compare = fraction.Compare(fraction2);
+            //Fraction.BringResultFraction(sumFracture);
+            //Fraction.BringResultFraction(substractFraction);
+            //Fraction.BringResultFraction(minimaze);
+            Fraction.BringResultFraction(multiplay);
+            //Fraction.BringResultFraction(divine);
+            //Console.WriteLine(compare);
+        }
+    }
+}
+
+//Прямоугольник
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
+using System.Reflection.Metadata;
+using System.Security.Claims;
+using System.Xml.Linq;
+
+namespace Seminar2
+{
+    public class Point
+    {
+        public readonly double XBottomLeftPoint;
+        public readonly double YBottomLeftPoint;
+        public Point(double x, double y)
+        {
+            XBottomLeftPoint = x;
+            YBottomLeftPoint = y;
+        }
+    }
+    public class Rectangle
+    {
+        private double width;
+        private double height;
+        private Segment secondSide;
+        private Segment firstSide;
+        public readonly Point TopPointFirst;
+        public readonly Point TopPointSecond;
+        public readonly Point TopPointThird;
+        public readonly Point TopPointFourth;
+
+        public double Width
+        {
+            get { return width; }
+            set
+            {
+                if (value < 0) throw new ArgumentException();
+                width = value;
+            }
+        }
+
+        public double Height
+        {
+            get { return height; }
+            set
+            {
+                if (value < 0) throw new ArgumentException();
+                height = value;
+            }
+        }
+
+        public Rectangle(double _width, double _height, Point firstPoint)
+        {
+            width = _width;
+            height = _height;
+            TopPointFirst = firstPoint;
+            TopPointSecond = Geometry.GetPoint();
+            TopPointThird = Geometry.GetPoint();
+            TopPointFourth = Geometry.GetPoint();
+        }
+    }
+
+    public class Axis
+    {
+        private double axisAngle;
+        public double AxisAngle 
+        { 
+            get { return AxisAngle; } 
+            set 
+            { 
+                if (value != 90) throw new ArgumentException(); 
+                AxisAngle = value; 
+            } 
+        }
+        public Axis AxisX;
+        public Axis AxisY;
+        public Axis Length;
+        public double GetLengthAxisAndPoint()
+        {
+            throw new ArgumentException();
+        }
+        public Axis()
+        {
+            Length = GetLengthAxisAndPoint();
+        }
+    }
+    public class Segment
+    {
+        public Vector Begin;
+        public Vector End;
+        public Segment(Vector beginOfSegment, Vector endOfSegment)
+        {
+            Begin = beginOfSegment;
+            End = endOfSegment;
+        }
+    }
+
+    public class Vector
+    {
+        public readonly double X;
+        public readonly double Y;
+        public Vector(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
+
+    public class Geometry
+    {
+        public Segment GetSegment()///возвращает отрезок (сегмент)
+        {
+            return new Segment();
+        }
+        public Point GetPoint()///возвращает вершину (вектор)
+        {
+            return new Point();
+        }
+
+        public Point SearchPointWithOutAxis(Point firstPoint, double _width, double _height)
+        {
+            throw new ArgumentException();
+        }
+
+        public double SearchAnglesWithAxis(double _width, double _height, double lengthAxisAndPoint)
+        {
+            throw new ArgumentException();
+        }
+
+        public static double GetLength(Vector vector)
+        {
+            throw new ArgumentException();
+        }
+
+        public static Vector Add(Vector firstVector, Vector secondVector)
+        {
+            throw new ArgumentException();
+        }
+
+        public static double GetLength(double segment)
+        {
+            throw new ArgumentException();
+        }
+
+        public static bool IsVectorInSegment(Vector vectorX, double segmentAB)
+        {
+            throw new ArgumentException();
+        }
+    }
+}
+
+//Доделанное домино
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Домино2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+
+    class Table
+    {
+        private bool diceLocation;
+        public bool DiceLocation
+        {
+            get { return diceLocation; }
+            set
+            {
+                if (value == false) throw new ArgumentException();
+                diceLocation = value;
+            }
+        }
+
+        private int CurrentFirstDiceScore;
+        private int CurrentSecondDiceScore;
+        public Table()
+        {
+            CurrentFirstDiceScore = Dice.GetCurrentDiceScore();
+            CurrentSecondDiceScore = Dice.GetCurrentDiceScore();
+        }
+    }
+
+    class Dice
+    {
+        public readonly int FirstScore;
+        public readonly int SecondScore;
+        public static int DiceRemains;
+
+        public static int Width 
+        { 
+            get { return Width; } 
+            private set 
+            { 
+                if (value < 0 || Length < value) throw new ArgumentException(); 
+                Width = value;
+            } 
+        }
+
+        public static int Length
+        {
+            get { return Length; }
+            private set
+            {
+                if (value < 0 || Width > value) throw new ArgumentException();
+                Length = value;
+            }
+        }
+
+        public int GetCurrentDiceScore()
+        {
+            throw new ArgumentException();
+        }
+
+        public Dice(int firstScore, int secondScore, int width, int length)
+        {
+            Width = width;
+            Length = length;
+
+            if (firstScore < 0 || secondScore < 0 || firstScore > 6 || secondScore > 6)
+                throw new ArgumentException();
+            FirstScore = firstScore;
+            SecondScore = secondScore;
+        }
+    }
+
+    class Player
+    {
+        public string Name 
+        {
+            get { return Name; }
+            set 
+            { 
+                if (value == null || value == "") throw new ArgumentException(); 
+                Name = value;
+            } 
+        }
+        public int CountDiceInHands 
+        { 
+            get { return CountDiceInHands; }
+            set 
+            { 
+                if (value < 0) throw new ArgumentException(); 
+                CountDiceInHands = value; 
+            }
+        }
+
+
+        public void Run(Dice currentDice, Dice diceOnTable)
+        {
+            Move.MakeMove(this, diceOnTable, currentDice);
+        }
+    }
+
+    static class Move
+    {
+        public static bool MakeMove(Player player, Dice diceOnTable, Dice currentDice)
+        {
+            if (Rules.EnoughDice(player) && Rules.IsCorrectMove(diceOnTable, currentDice))
+            {
+                Dice.DiceRemains--;
+                player.CountDiceInHands--;
+                return true;
+            }
+            else
+                throw new ArgumentException();
+        }
+    }
+
+    class Rules
+    {
+        public static bool IsCorrectMove(Dice diceOnTable, Dice currentDice)
+        {
+            return (diceOnTable.FirstScore == currentDice.FirstScore || diceOnTable.FirstScore == currentDice.SecondScore ||
+                diceOnTable.SecondScore == currentDice.FirstScore || diceOnTable.SecondScore == currentDice.SecondScore);
+        }
+        public static bool EnoughDice(Player player)
+        {
+            if (player.CountDiceInHands > 0)
+                return true;
+            return false;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+Подготовили:
+*Метелев Никита
+*Комаров Максим
+Первая задача:
+var number = 1243;
+var invertedNumber = 0;
+var numberOfDigits = number.ToString().Length;
+while (numberOfDigits > 0)
+{
+    var discharge = numberOfDigits - 1;
+    var lastNumber = number % 10;
+    var partOfResult = lastNumber * Math.Pow(10, discharge);
+    invertedNumber += (int)partOfResult;
+    number /= 10;
+    numberOfDigits--;
+}
+Console.WriteLine(invertedNumber);
+Вторая задача:
+var n = 3;
+var amountOfRightNumbers = 0;
+for (var x = 1; x <= 9; x++)
+{
+    for (var y = 0; y <= 9; y++)
+    {
+        for (var z = 0; z <= 9; z++)
+        {
+            if (x + y + z == n)
+                amountOfRightNumbers++;
+            else
+                continue;
+        }
+    }
+}
+
+Console.WriteLine(amountOfRightNumbers);
+
+Третья задача:
+
+//12345678910111213141516171819...99100
+
+//var seatInRow = 44;
+
+Console.WriteLine(SearchNumberInRange(1000000));
+
+string SearchNumberInRange(int seatInRow)
+{
+    var nextNumberInRow = 0;
+    var nextNumberInRowString = "";
+    var rowOfNumbers = "";
+    for (var lengthOfRow = 0; lengthOfRow < seatInRow; rowOfNumbers += nextNumberInRowString)
+    {
+        nextNumberInRow++;
+        nextNumberInRowString = nextNumberInRow.ToString();
+        lengthOfRow += nextNumberInRowString.Length;
+    }
+    return rowOfNumbers[seatInRow - 1].ToString();
+}
+//Идеи:
+//не смогли придумать как это реализовать, но вот варианты мыслей, может хоть что-то близко?
+///1
+///К числу прибавить 11...10(едениц столько, сколько разрядов) => разделить на кол-во разрядов
+///У получившегося числа если делится на цело - первая цифра ответ
+///если останок переодический ближе к нулю => первая цифра, чем больше остаток, тем правее цифра - ответ
+//Примеры:трёхзначные: целое деление - 1 цифра, остаток .333333 - 2 цифра, остаток .666666 - 3 цифра
+четырёхзначные: целое деление - 1, остаток 0.25 - 2 цифра, 0.5 - 3 цифра, 0.75 - 4 цифра
+пятизначные-  целое деление - 1, остаток 0.2 - 2 цифра, 0.4 - 3 цифра, и так далее с ходом +0.2
+//Проверили эту процедуру, с помощью программы выше, всё сходилось, но в код это перенести не смогли
+//Console.WriteLine(Search(15));
+
+//static string Search(int n)
+//{
+//    var seat = ((n - (90 + 180//+2700...)) / 3) + 99; //+ 2700//+36000...;
+//    var value = seat.ToString();
+//    return value;
+//}

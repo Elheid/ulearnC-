@@ -1,0 +1,46 @@
+public class StackToQueue<T>
+    {
+        List<T> list = new List<T>();
+        
+        public bool IsEmpty { get { return list.Count == 0; } }
+        public void Push(T value)
+        {
+            list.Add(value);
+        }
+        public T Pop()
+        {
+            if (list.Count == 0) throw new InvalidOperationException();
+            var result = list[list.Count - 1];
+            list.RemoveAt(list.Count - 1);
+            return result;
+        }
+    }
+
+    public class QueueOnStacks<T>
+    {
+        StackToQueue<T> stackInRightOrder;
+        StackToQueue<T> stackInOppositeOrder;
+
+        public bool IsEmpty { get { return stackInRightOrder.IsEmpty && stackInOppositeOrder.IsEmpty; } }
+        public QueueOnStacks()
+        {
+            stackInRightOrder = new StackToQueue<T>();
+            stackInOppositeOrder = new StackToQueue<T>();
+        }
+
+        public void Enqueue(T value)
+        {
+
+            stackInRightOrder.Push(value);
+        }
+
+        public T Dequeue()
+        {
+            if (stackInOppositeOrder.IsEmpty)
+            {
+                while (!stackInRightOrder.IsEmpty)
+                    stackInOppositeOrder.Push(stackInRightOrder.Pop());
+            }
+            return stackInOppositeOrder.Pop();
+        }
+    }
